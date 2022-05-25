@@ -1,6 +1,6 @@
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 import { Container } from '@material-ui/core';
-import Loading from './Components/Loading/Loader';
+
 
 
 
