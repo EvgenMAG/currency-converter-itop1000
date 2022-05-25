@@ -32,6 +32,7 @@ export default function HomePage() {
     useEffect(() => {
         fetchCurrencies()
             .then(data => {
+                console.log(data)
                 const defaultCurrency = Object.keys(data.rates).find(item => item === "USD")
                 const listCurencies = Object.entries(data.rates).filter(item => item[0] === "EUR" || item[0] === "USD").reduce((acc, item) => {
                     acc.push({ actualCur: item[0], rate: item[1], homeCur: data.base })
@@ -51,6 +52,7 @@ export default function HomePage() {
         if (fromCurrency && toCurrency) {
             fetchRates(fromCurrency, toCurrency)
                 .then(data => {
+                    console.log(data)
                     setExchangeRate(data.rates[toCurrency])
 
                 })
